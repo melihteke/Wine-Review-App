@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    NAME = os.environ['NAME']
+    SURNAME = os.environ['SURNAME']
     return f'Hello, {NAME} {SURNAME}!'
 
 if __name__ == '__main__':
