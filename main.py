@@ -13,9 +13,9 @@ ns1 = api.namespace('', description='mteke.com APIs')
 @ns1.route('/')
 class HelloWorld(Resource):
     def get(self):
-        NAME = os.environ['NAME']
-        SURNAME = os.environ['SURNAME']
-        return f'Hello, {NAME} {SURNAME}!'
+        #NAME = os.environ['NAME']
+        #SURNAME = os.environ['SURNAME']
+        return f'Hello, Melig Teke!'
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5001)
