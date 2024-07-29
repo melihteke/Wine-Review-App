@@ -1,4 +1,3 @@
-from flask import Flask
 import os
 from flask import Flask, render_template
 from flask_restx import Api, Resource, reqparse
@@ -10,12 +9,12 @@ api = Api(app, title='Heroku API', version='1.0', description='API collection fo
 # Define a Retail Voice namespace
 ns1 = api.namespace('', description='mteke.com APIs')
 
-@ns1.route('/')
+@ns1.route('/hello')
 class HelloWorld(Resource):
     def get(self):
         #NAME = os.environ['NAME']
         #SURNAME = os.environ['SURNAME']
-        return f'Hello, Melig Teke!'
+        return f'Hello, Melih Teke!'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
