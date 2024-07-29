@@ -16,5 +16,12 @@ class HelloWorld(Resource):
         SURNAME = os.environ['SURNAME']
         return f'Hello, {NAME} {SURNAME}!', 200
 
+@ns1.route('/con')
+class HelloWorld(Resource):
+    def get(self):
+        NAME = os.environ['NAME']
+        SURNAME = os.environ['SURNAME']
+        return f'{NAME} + {SURNAME}!', 200
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
