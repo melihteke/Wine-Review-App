@@ -3,3 +3,4 @@ gunicorn
 flask-restx
 flask_limiter
 flask_httpauth
+sqlite-utils
