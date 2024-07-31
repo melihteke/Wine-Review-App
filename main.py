@@ -35,18 +35,9 @@ class WineList(Resource):
     def get(self):
         """List all wines"""
 
-        return jsonify({"messge": "not possible to show all the wines"})
+        return jsonify({"operation": "Retrieve all the wines list.",
+                        "message": "this endpoint is disabled on purpose."})
     
-    @auth.login_required
-    def post(self):
-        return jsonify({"messge": "the wine added"})
-    
-    @auth.login_required
-    def delete(self):
-        """Remove a wine from BD"""
-        title = {"title": "Wine to be deleted"}
-        return jsonify({"messge": "the wine removed"})
-
 
 @ns.route('/<string:title>')
 class Wine(Resource):
@@ -84,6 +75,18 @@ class Wine(Resource):
 
         return result_list
 
+    @auth.login_required
+    def post(self, title):
+        """Add a new wine to DB"""
+        return jsonify({"operation": f"{title} is added",
+                        "message": "this endpoint is disabled on purpose. Nothing is changed on database."})
+    
+    @auth.login_required
+    def delete(self, title):
+        """Remove a wine from DB"""
+        return jsonify({"operation": f"{title} is removed",
+                        "message": "this endpoint is disabled on purpose. Nothing is changed on database."})
+    
 # Run the Flask application
 if __name__ == '__main__':
      app.run(debug=True, host='0.0.0.0', port=5001)
