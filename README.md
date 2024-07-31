@@ -29,7 +29,7 @@ This is a Flask-based API for retrieving data from a Wine database. The API supp
 
 2. Install the required Python packages:
     ```sh
-    pip install Flask Flask-RESTx Flask-HTTPAuth
+    pip install -r requirements.txt
     ```
 
 3. Set up environment variables for API authentication:
