@@ -7,7 +7,7 @@ import os
 
 # Initialize Flask app
 app = Flask(__name__)
-api = Api(app)
+api = Api(app, description="Wine Review API", version='1.0.1')
 
 # Initialize HTTP Basic Auth
 auth = HTTPBasicAuth()
